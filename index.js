@@ -28,7 +28,7 @@ const getNews = async () => {
         const res = await fetch(NEWS_API_URL)
         const json = await res.json();
         const { data: { newsAlert: { breakingNews } } } = json;
-        if (breakingNews && !await articleExistsCNBC(breakingNews.title, breakingNews.url)) {
+        if (breakingNews && !await articleExistsCNBC(breakingNews.url)) {
             addArticle({
                 title: breakingNews.title,
                 url: breakingNews.url

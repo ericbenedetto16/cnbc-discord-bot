@@ -2,7 +2,7 @@ const BreakingNews = require('../models/BreakingNews');
 
 exports.articleExistsCNBC = async (a, b) => {
     try {
-        const article = await BreakingNews.findOne({ title: a, url: b });
+        const article = await BreakingNews.findOne({ url: b });
         if (!article) {
             return false;
         }
