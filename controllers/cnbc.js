@@ -1,8 +1,8 @@
 const BreakingNews = require('../models/BreakingNews');
 
-exports.articleExistsCNBC = async (a, b) => {
+exports.articleExistsCNBC = async a => {
     try {
-        const article = await BreakingNews.findOne({ url: b });
+        const article = await BreakingNews.findOne({ url: a });
         if (!article) {
             return false;
         }
