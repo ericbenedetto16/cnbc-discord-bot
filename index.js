@@ -5,6 +5,9 @@ const connectDB = require('./config/db');
 const { articleExistsCNBC, addArticle } = require('./controllers/cnbc');
 const bot = new Discord.Client();
 const { TOKEN, NEWS_API_URL, UPDATE_TIME, CHANNEL_NAME } = process.env;
+// const express = require('express');
+
+// const app = express();
 
 bot.login(TOKEN);
 
@@ -37,3 +40,7 @@ const getNews = async () => {
         return err;
     }
 }
+
+// const port = process.env.PORT || 5000;
+
+// app.listen(port, () => console.log(`Server started on port ${port}`));
