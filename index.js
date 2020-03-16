@@ -12,10 +12,10 @@ connectDB();
 
 let channel;
 bot.on('ready', () => {
+    console.log(`Bot Logged In`);
     const channel_map = bot.channels.cache.filter(({ type, name }) => type === 'text' && name === CHANNEL_NAME);
     const channel_id = channel_map.toJSON()[0].id
     channel = bot.channels.cache.get(channel_id);
-    channel.send('test')
 
     setInterval(() => { getNews() }, UPDATE_TIME * 1000);
 });
